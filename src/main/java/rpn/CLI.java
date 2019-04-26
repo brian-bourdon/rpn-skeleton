@@ -13,6 +13,19 @@ public class CLI {
     }
 
     static long evaluate(String expression) {
-        return 0;
+    	String[] parts = expression.split(" ");
+    	long res = 0;
+    	for(int i = 0; i < parts.length; i++)
+    	{
+    		try 
+    		{
+    	        long l = Long.parseLong(parts[i]);
+    	        res += l;
+    	    } catch (NumberFormatException | NullPointerException nfe)
+    		{
+    	    	
+    		}
+    	}
+    		return res;	
     }
 }
